@@ -3,6 +3,9 @@ install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
+run:
+	python manage.py runserver 8080
+
 post-install:
 	python -m textblob.download_corpora
 
@@ -18,7 +21,7 @@ test:
 build:
 	#build container
 	docker build -t deploy-fastapi .
-run:
+dockerize:
 	#run docker
 	#docker run -p 127.0.0.1:8080:8080 c1a36ab4da9d
 deploy:
